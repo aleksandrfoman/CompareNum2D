@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+
 public class DropPlace : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExitHandler
 {
+    private FieldInfo _fieldInfo;
+    private void Start()
+    {
+        if (gameObject.GetComponent<FieldInfo>())
+        {
+            _fieldInfo = GetComponent<FieldInfo>();
+        }
+    }
 
-    
+
     public void OnDrop(PointerEventData eventData)
     {
-        Card card = eventData.pointerDrag.GetComponent<Card>();
+        CardMovement card = eventData.pointerDrag.GetComponent<CardMovement>();
         if (card)
         {
             card.defaultParent = transform;
+
+            if (_fieldInfo)
+                _fieldInfo.AddCardField(card.GetComponent<CardInfo>());
         }
     }
 
@@ -22,10 +35,10 @@ public class DropPlace : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointe
         {
             return;
         }
-        Card card = eventData.pointerDrag.GetComponent<Card>();
+        CardMovement card = eventData.pointerDrag.GetComponent<CardMovement>();
         if (card)
         {
-            card.defaultTempCardParent = transform;
+            card.defaultTempCardParent = transform; 
         }
     }
 
@@ -35,7 +48,7 @@ public class DropPlace : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointe
         {
             return;
         }
-        Card card = eventData.pointerDrag.GetComponent<Card>();
+        CardMovement card = eventData.pointerDrag.GetComponent<CardMovement>();
         if (card&&card.defaultTempCardParent == transform)
         {
             card.defaultTempCardParent = card.defaultParent;

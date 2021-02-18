@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5421862595094549331}
   - component: {fileID: 5421862595094549333}
   - component: {fileID: 5421862595094549330}
-  - component: {fileID: 8528839536705322531}
   - component: {fileID: 2276503694417281220}
+  - component: {fileID: 8528839536705322531}
+  - component: {fileID: 7982322961924419883}
   m_Layer: 5
   m_Name: CardPref
   m_TagString: Untagged
@@ -78,6 +79,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2276503694417281220
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421862595094549328}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &8528839536705322531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,18 +104,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
---- !u!225 &2276503694417281220
-CanvasGroup:
+  defaultTempCardParent: {fileID: 0}
+--- !u!114 &7982322961924419883
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421862595094549328}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ffb36cb443ae4ba44c291150a089d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreCard: 5
+  _textScoreCard: {fileID: 5421862595219812181}
 --- !u!1 &5421862595219812179
 GameObject:
   m_ObjectHideFlags: 0

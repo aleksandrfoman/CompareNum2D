@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
+public class CardMovement : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
     private Camera _mainCamera;
     private Vector3 _offset;
